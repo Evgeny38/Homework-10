@@ -25,6 +25,20 @@ public class Main {
         System.out.println(book1);
         System.out.println(book2);
 
+        System.out.println(book.equals(book1));
+        System.out.println(book.hashCode()==book1.hashCode());
+
+        System.out.println(book1.equals(book2));
+        System.out.println(book1.hashCode()==book2.hashCode());
+
+        System.out.println(book.equals(book2));
+        System.out.println(book.hashCode()==book2.hashCode());
+
+
+        System.out.println(book.hashCode());
+        System.out.println(book1.hashCode());
+        System.out.println(book2.hashCode());
+
 
     }
 }

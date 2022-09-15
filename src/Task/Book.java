@@ -1,5 +1,7 @@
 package Task;
 
+import java.util.Objects;
+
 public class Book {
     private final String title;
     private final Author author;
@@ -34,5 +36,18 @@ public class Book {
         return "Название книги : " + title + ", " +
                  author + ", " +
                 "Год публикации : " + publicationYear + ".";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Book)) return false;
+        Book book = (Book) o;
+        return getTitle().equals(book.getTitle()) && getAuthor().equals(book.getAuthor()) && getPublicationYear().equals(book.getPublicationYear());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTitle(), getAuthor(), getPublicationYear());
     }
 }
